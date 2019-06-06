@@ -1,0 +1,340 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Custom fonts for this template -->
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{url_for('static', filename ='css/styles.css')}}">
+  <title>cleanIT</title> {% if title %}
+  <title>{{ title }}</title>
+  {% else %}
+  <title>Home- Welcome to the Post Website</title>
+  {% endif %}
+
+<body>
+
+    <div class="banner">
+        <video autoplay muted loop>
+          <source src="../static/photos/y2mate.com - what_is_recycling_animation_e03YFozvruU_1080p.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+        </div>
+      </div>`<br><br>
+ 
+  <div class="nav" style="background-color:black;" id="navbar">
+    <div class="nav">
+      <a class="navbar-brand" href="/" style=" font-size:25px;">GUTTER CLEANING</a>
+      <div class="home d-flex align-items-center ml-5">
+      </div>
+      <div class="nav-content ml-auto mr-0 d-flex align-items-center">
+        <ul class="nav-ul d-flex align-items-center mb-0">
+          <li>
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="{{url_for('main.about') }}">About</a>
+          </li>
+          {% if current_user.is_authenticated %} {% if current_user.is_admin %}
+          <li><a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+          {% else %}
+          {% endif %}
+          <li><a class="nav-link" href="{{url_for('auth.logout')}}">Log out</a></li>
+          <li><a class="nav-link"><i class="fa fa-user"></i> Hi, {{ current_user.username }}!</a></li>
+          {% else %}
+          <li><a class="nav-link" href="{{url_for('auth.register')}}">Register</a></li>
+          <li class="divider"></li>
+          <li><a class="nav-link" href="{{url_for('auth.login')}}">Log in</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div style="background-color:white;">
+    
+    <div class="container text-center mb-0" style="background-color:white;">
+      <h1 style="color:black;"><u>OUR CORE SERVICES</u></h1><br>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="../static/photos/cleaningicon.png" alt="Card image cap">
+         
+          <div class="card-body">
+            <h5 class="card-title">Waste disposal and cleaning</h5>
+            <p class="card-text">We make sure that your waste is collected and disposed of legally,efficiently and
+              appropriatley.Our service team provide greater flexiblity
+              which means extra or emergency collections are dealt with both quickly and efficiently</p>
+            <p class="card-text"><small class="text-muted">Read More</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="../static/photos/bettertraining.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Staff Training</h5>
+            <p class="card-text">We train cleaning staff in your home,hotel and all institutions included to enhance
+              productivity and
+              business gain. We train your staff how to effectively handle health issues inside the institution to
+              minimise spreading
+              or chances of a similar incident</p>
+             <p><a href="/service">Sign out</a></p>
+              <!-- <p class="card-text"><small class="text-muted">Read More</small></p> -->
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="../static/photos/tree.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Compound Management</h5>
+            <p class="card-text">We provide you with the best team that is skilled in land scaping to make both working
+              and home environments appealing to the eye and at the same time conserving the planet </p>
+            <p class="card-text"><small class="text-muted">Read More</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--edit here CAROUSEL WITH OUR CLIENTS -->
+<br><br>
+    <!-- remember this is where carousell ends -->
+    <div class="jumbotron text-center mb-0 mt-0" style="background-color:black;">
+      <!--- Footer -->
+      <footer id="g3-footer">
+        <div class="container-fluid padding">
+          <div class="row text-center">
+            <div class="col-md-4">
+              <!--<img src="../static/photos/twing.png" style="height:30px,width:30px;">-->
+              <hr style="color:white;">
+              <p style="color:white;">123-456-789</p>
+              <p style="color:white" ;>info@gutterclean.com</p>
+              <p style="color: white" ;>Moringa School</p>
+              <p style="color:white;">Ngong Lane Plaza, Nairobi, 001000</p>
+            </div>
+            <div class="col-md-4">
+              <hr style="color:white;">
+              <h5 style="color:white;">Co-founders:</h5>
+              <hr class="light">
+              <p style="color:white;">Willen Gitonga</p>
+              <p style="color:white;">Mitch Ndungu</p>
+              <p style="color:white;">Austin Waweru</p>
+              <p style="color:white;">Kevin Munge</p>
+            </div>
+            <div class="col-md-4">
+              <hr style="color:white;">
+              <h5 style="color:white;">Supported Platforms:</h5>
+              <hr class="light">
+              <p style="color:white;">Android</p>
+              <p style="color:white;">iOS</p>
+              <p style="color:white;">Windows Phone</p>
+            </div>
+            <div class="col-12">
+              <hr style="color:white;">
+              <h5 style="color:white;">&copy; Guttercleaning</h5>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
+    integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+  <script src="../static/js/victor.js"></script>
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    window.onscroll = function () {
+      myFunction()
+    };
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
+<style>
+  * {
+    box-sizing: border-box
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+   
+  /* body{ */
+ /* margin: 0; */
+ /* padding: 0; */
+ /* height: 1000px; */
+/* } */
+.banner{
+ width: 100%;
+ height: 100vh;
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.banner video{
+ position: absolute;
+ top: 0;
+ left: 0;
+ object-fit: cover;
+ width: 100%;
+ height: 100%;
+ pointer-events: none;
+}
+.banner .content{
+ position: relative;
+ z-index: 1;
+ max-width: 1000px;
+ margin: 0 auto;
+ text-align: center;
+}
+.banner .content h1{
+ margin: 0;
+ padding: 0;
+ font-size: 4.5em;
+ text-transform: uppercase;
+ color: #fff;
+}
+
+</style>

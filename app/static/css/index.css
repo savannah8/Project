@@ -1,0 +1,9 @@
+
+
+
+.tweet-item {
+    list-style: none;
+    border-bottom: 1px solid #2f2f2f;
+    border-left: 3px darkslateblue solid;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,101 @@
+
+.padding {
+    padding-bottom: 1rem;
+  }
+  .social a {
+    font-size: 4.5em;
+    padding: 3rem;
+  }
+  .fa-facebook {
+    color: white;
+  }
+  .fa-twitter {
+    color: #00aced;
+  }
+  .fa-google-plus-g {
+    color: white;
+  }
+  .fa-instagram {
+    color: white;
+  }
+  .fa-youtube {
+    color: white;
+  }
+  .fa-facebook:hover, .fa-twitter:hover, .fa-google-plus-g:hover, .fa-instagram:hover'
+   .fa-youtube:hover {
+    color: #d5d5d5;
+  }
+  .top {
+     height: 200px;
+     background-color: rgba(32, 32, 32, 0.637);
+  }
+  .twing-title {
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 76px;
+  }
+  .nav-link {
+    padding-left: 0 !important;
+  }
+  .nav {
+     height: 60px;
+  }
+  /* .nav-btm {
+      background-color: rgba(72, 75, 72, 0.7)
+  } */
+  li {
+     list-style: none;
+  }
+  /* End of home page image slider css styling */
+  /* styling for the pitches on the homepage */
+  #video-background {
+  /*  making the video fullscreen  */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+  }
+  #navbar {
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  #navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .content {
+    padding: 16px;
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 3;
+  }
+  .sticky + .content {
+    padding-top: 60px;
+  }
+  .tweet-item {
+      list-style: none;
+      border-bottom: 1px solid #2f2f2f;
+      border-left: 3px darkslateblue solid;
+      margin-bottom: 4px;
+  }
+  
