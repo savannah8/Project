@@ -25,14 +25,20 @@ def service():
     return render_template('service.html')
 
 
+@main.route('/google')
+def google():
+    
 
-@main.route('/about')
-def about():
-    """ 
-    View root page function that returns the about page 
-    """
+    return render_template('google.html')
 
-    return render_template('about.html')
+
+# @main.route('/about')
+# def about():
+#     """ 
+#     View root page function that returns the about page 
+#     """
+
+#     return render_template('about.html')
 
 # VIEWING EACH SPECIFIC PROFILE
 @main.route('/user/<uname>')

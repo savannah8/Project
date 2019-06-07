@@ -11,22 +11,21 @@ login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 
+simple = SimpleMDE()
+
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 photos = UploadSet('photos',IMAGES)
 mail = Mail()
-simple = SimpleMDE()
 
 def create_app(config_name):
+
     app = Flask(__name__)
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Creating the app configurations
+
     app.config.from_object(config_options[config_name])
-
-
-    # configure UploadSet
-    configure_uploads(app, photos)
+    config_options[config_name].init_app(app)
 
     # Initializing flask extensions
     bootstrap.init_app(app)
@@ -35,12 +34,23 @@ def create_app(config_name):
     mail.init_app(app)
     simple.init_app(app)
 
+
     # Registering the blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/auth')
+    app.register_blueprint(auth_blueprint,url_prefix = '/auth')
 
-    
+    # setting config
+    # from .requests import configure_request
+    # configure_request(app)
+
+
+
+    # configure UploadSetalias doflask="python3.6 -m venv --without-pip virtual && source virtual/bin/activate && curl https://bootstrap.pypa.io/get-pip.py | python3 && pip install flask && pip install flask-bootstrap && pip install flask-script && pip install flask-wtf && pip install flask-migrate && pip install flask-login && pip install flask-uploads && pip install flask-mail && pip install flask-simplemde markdown2 && pip install flask-SQLAlchemy && pip install psycopg2 && echo '../.. Finished flask installations ../..' && python3.6 -m  pip install gunicorn && pip freeze > requirements.txt"
+    configure_uploads(app,photos)
+
+
+
     return app

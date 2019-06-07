@@ -27,29 +27,3 @@
   </div>
 </div>
 
-<!-- <div class="nav" style="background-color:black;" id="navbar">
-  <div class="nav">
-    <a class="navbar-brand" href="/" style=" font-size:25px">GUTTER CLEANING</a>
-    <div class="home d-flex align-items-center ml-5">
-    </div>
-    <div class="nav-content ml-auto mr-0 d-flex align-items-center">
-      <ul class="nav-ul d-flex align-items-center mb-0">
-        <li>
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="{{url_for('main.about') }}">About</a>
-        </li>
-        {% if current_user.is_authenticated %} {% if current_user.is_admin %}
-        <li><a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-        {% else %}
-        {% endif %}
-        <li><a class="nav-link" href="{{url_for('auth.logout')}}">Log out</a></li>
-        <li><a class="nav-link"><i class="fa fa-user"></i> Hi, {{ current_user.username }}!</a></li>
-        {% else %}
-        <li><a class="nav-link" href="{{url_for('auth.register')}}">Register</a></li>
-        <li class="divider"></li>
-        <li><a class="nav-link" href="{{url_for('auth.login')}}">Log in</a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
-</div> -->

@@ -2,7 +2,6 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
-from datetime import datetime
 from sqlalchemy.sql import func
 
 @login_manager.user_loader
@@ -34,23 +33,27 @@ class User(UserMixin,db.Model):
     pass_secure = db.Column(db.String(255))
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
-    posts = db.relationship("Post", backref="user", lazy = "dynamic")
-    comment = db.relationship("Comments", backref="user", lazy = "dynamic")
-    vote = db.relationship("Votes", backref="user", lazy = "dynamic")
+   # posts = db.relationship("Post", backref="user", lazy = "dynamic")
+    #comment = db.relationship("Comments", backref="user", lazy = "dynamic")
+    #vote = db.relationship("Votes", backref="user", lazy = "dynamic")
     photos = db.relationship('PhotoProfile',backref = 'user',lazy = "dynamic")
 
-    # securing passwords
     @property
     def password(self):
-        raise AttributeError('You can not read the password Attribute')
+        raise AttributeError('You cannnot read the password attribute')
 
     @password.setter
     def password(self, password):
-        self.pass_secure = generate_password_hash(password)
+        self.password_hash = generate_password_hash(password)
+
 
     def verify_password(self,password):
-        return check_password_hash(self.pass_secure,password)
+        return check_password_hash(self.password_hash,password)
+
+
+    def save_user(self):
+        db.session.add(self)
+        db.session.commit()
 
     def __repr__(self):
         return f'User {self.username}'
-
